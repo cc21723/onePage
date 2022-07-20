@@ -1,0 +1,82 @@
+header{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 40px;
+    left: 0;
+    padding: 20px;
+    color: snow;
+}
+header nav ul{
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul a{
+    border-bottom: 1px dashed snow;
+    text-decoration: none;
+    display: block;
+    color: snow;
+    text-align: center;
+    margin:5px 0 10px 0;
+    padding: 10px 0;
+}
+[id^="content"]{
+    min-height: 700px;
+    background-position: center;
+    background-size: cover;
+    padding: 30px 100px;
+
+}
+#content1{
+    background-image: url(../images/afternoon-tea-617142_1920.jpg);
+    background-attachment: fixed;
+}
+#content2{
+    background-image: url(../images/black-coffee-2847957_1920.jpg);
+}
+#list {
+    display: flex;
+    flex-wrap: wrap;
+}
+#list .item{
+    
+    flex: 0 0 calc(33.3% - 40px);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: snow;
+    margin: 10px;
+    padding: 10px;
+}
+.item img{
+    width: 100%;
+}
+#content3{
+    background-image: url(../images/eating-1544792_1920.jpg);
+    background-attachment: fixed;
+}
+#content4{
+    background-image: url(../images/high-tea-2000983_1920.jpg);
+}
+#content5{
+    background-image: url(../images/tea-1170555_1920.jpg);
+    background-attachment: fixed;
+}
+#content6{
+    background-image: url(../images/tee-508114_1920.jpg);
+}
+
+@media (max-width:600px) {
+    #list {
+        display: block;
+        /* flex-wrap: wrap; */
+    }
+}
+@media (min-width:601px) and (max-width:960px) {
+    #list .item{
+    
+        flex: 0 0 calc(50% - 40px);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: snow;
+        margin: 10px;
+        padding: 10px;
+    }
+}

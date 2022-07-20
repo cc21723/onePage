@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnePage</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.parallax-1.1.3.js"></script>
+    <script src="WOW-master/dist/wow.min.js"></script>
+
+    <script>
+        $(function(){ 
+            //parallax('左右水平對齊位置',速度 數字越高捲的越快)
+            $('#content1').parallax('50%',0.3);
+
+            $('[id^="content"] h2').addClass('wow animate__animated animate__rubberBand')
+                                   .attr('data-wow-offset','200');
+                                   
+            $('#content2 .item:nth-of-type(odd)').addClass('wow animate__animated animate__bounceInLeft');
+            $('#content2 .item:nth-of-type(even)').addClass('wow animate__animated animate__bounceInRight');
+            $('#content2 .item').attr('data-wow-offset','200');
+            
+            $('#content2 .item:nth-of-type(3n+2)').attr('data-wow-delay','0.5s'); //2.5延遲0.5秒
+            $('#content2 .item:nth-of-type(3n+3)').attr('data-wow-delay','1s'); //3.6延遲1秒
+
+            // var item=$('#content2 .item');
+            // for(var i=0;i<item.length;i++){
+            //     var j=i%3;
+            //     item.eq(i).attr('data-wow-delay',j*0.5+"s");
+            // }
+            new WOW().init();
+            
+            $('header nav ul a').click(function(){
+                var targetID=$(this).attr('href');
+                var scrollTo=$(targetID).offset().top;
+                $('html,body').animate({'scrollTop':scrollTo});
+                
+                return false;
+            })
+            
+            
+        })
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="wow animate__animated animate__rubberBand" data-wow-duration="2s" data-wow-delay="0.5s">OnePage</h1>
+        <nav>
+            <ul>
+                <li><a href="#content1">menu1</a></li>
+                <li><a href="#content2">menu2</a></li>
+                <li><a href="#content3">menu3</a></li>
+                <li><a href="#content4">menu4</a></li>
+                <li><a href="#content5">menu5</a></li>
+                <li><a href="#content6">menu6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="content1">
+            <h2>title1</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vitae quisquam voluptate libero accusantium corrupti repellendus. Perferendis fugit est molestiae, sit consequuntur dicta vitae molestias accusantium eos dolorem nihil laborum.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error fugit hic vel, commodi aliquid laborum corporis magni rem suscipit, tempora a dicta molestias ipsa quisquam labore debitis laudantium vitae repudiandae ipsum amet. Eos pariatur, unde sint impedit alias velit! Et, nam quia ullam fuga a commodi magni quos ipsum quaerat!</p>
+        </div>
+        <div id="content2">
+            <h2 >title2</h2>
+            <p>Quisquam quam suscipit, pariatur rem repellendus rerum ipsa magni facilis quasi! Totam commodi nesciunt quisquam laudantium facere, odio ducimus eaque nobis accusamus! Ab voluptatem inventore nostrum doloremque reiciendis praesentium eius.</p>
+            <p>In nemo totam enim minima, repellendus ipsam dolorum id, exercitationem fugit minus sint, eaque dicta animi? Quo ut debitis vel illo expedita, doloremque molestias praesentium porro optio delectus perferendis placeat ex beatae dicta ab esse, ipsa inventore eaque labore assumenda, ratione neque! Hic unde atque, ab odio suscipit voluptates officia.</p>
+            <div id="list">
+                <div class="item">
+                    <h3>item1</h3>
+                    <img src="item/thum/item01.jpg" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum facilis repellendus in laborum adipisci eos, quo ut, id est corporis excepturi distinctio eum tempore deserunt explicabo vitae voluptate reiciendis tempora.</p>
+                </div>
+                <div class="item">
+                    <h3>item2</h3>
+                    <img src="item/thum/item02.jpg" alt="">
+                    <p>Sapiente impedit, nemo officia quaerat laborum veniam itaque repudiandae id culpa cumque fugit velit corporis et voluptates temporibus optio esse repellat consectetur perspiciatis magnam tempora odio dolores error. At, consequuntur.</p>
+                </div>
+                <div class="item">
+                    <h3>item3</h3>
+                    <img src="item/thum/item03.jpg" alt="">
+                    <p>Repudiandae et, explicabo consequatur voluptates ducimus, aperiam totam voluptas corporis, tempore inventore illo! Recusandae obcaecati veritatis esse sint labore deleniti cum rerum, aspernatur nobis eos, quo numquam molestias vitae exercitationem?</p>
+                </div>
+                <div class="item">
+                    <h3>item4</h3>
+                    <img src="item/thum/item04.jpg" alt="">
+                    <p>A debitis aut eius. Quis similique sunt accusantium expedita minima ullam cupiditate, nostrum deleniti omnis repellendus! Perferendis totam autem necessitatibus hic in ut nesciunt reiciendis quia laudantium! Doloremque, voluptas iure!</p>
+                </div>
+                <div class="item">
+                    <h3>item5</h3>
+                    <img src="item/thum/item05.jpg" alt="">
+                    <p>Velit repudiandae dolor quis! Aspernatur enim cupiditate quas delectus! Architecto, ut? Nemo minus doloremque, consectetur qui commodi incidunt corporis explicabo quaerat exercitationem minima ducimus, officia, consequatur ea adipisci veniam quae!</p>
+                </div>
+                <div class="item">
+                    <h3>item6</h3>
+                    <img src="item/thum/item01.jpg" alt="">
+                    <p>Velit repudiandae dolor quis! Aspernatur enim cupiditate quas delectus! Architecto, ut? Nemo minus doloremque, consectetur qui commodi incidunt corporis explicabo quaerat exercitationem minima ducimus, officia, consequatur ea adipisci veniam quae!</p>
+                </div>
+            </div>
+        </div>
+        <div id="content3">
+            <h2>title3</h2>
+            <p>Optio earum similique ipsam quod fugiat aliquid officia aperiam recusandae dolore maiores quibusdam hic quo, minus temporibus nostrum alias commodi mollitia accusantium cumque, tempora consequatur tenetur dolorem amet. Nesciunt, laborum?</p>
+            <p>Nemo, sed deserunt sunt voluptates iste perspiciatis reiciendis dicta aspernatur corporis? Illum dolorem quis dicta mollitia, necessitatibus rem, neque corrupti placeat, ad soluta voluptas quas! Autem eius esse expedita dolor quibusdam! Ducimus provident tempore atque iusto rem voluptates recusandae corporis, veritatis architecto cupiditate ipsam accusantium hic? Expedita possimus nesciunt velit.</p>
+        </div>
+        <div id="content4">
+            <h2>title4</h2>
+            <p>Blanditiis aspernatur minima consequuntur neque saepe velit sed, expedita, facilis laboriosam ut itaque. Harum, tempora adipisci expedita inventore, aperiam blanditiis consequuntur quas neque deleniti iusto incidunt quisquam facilis ab nesciunt?</p>
+            <p>Esse numquam nihil pariatur necessitatibus ipsa quasi vitae laudantium nisi architecto culpa consequatur vero dolorem sequi labore harum, aperiam et. Incidunt illum sapiente magnam atque eveniet enim ullam inventore accusantium natus rerum quis explicabo odit voluptatibus animi asperiores voluptas sit, voluptatem doloribus eos labore ab porro soluta! Corrupti, quod optio!</p>
+        </div>
+        <div id="content5">
+            <h2>title5</h2>
+            <p>Asperiores deleniti expedita praesentium, dolores voluptates explicabo quibusdam atque! Corrupti doloribus molestiae consectetur soluta. Laudantium assumenda hic sit expedita enim neque incidunt, similique omnis minus? Veritatis quia distinctio dignissimos dolorem?</p>
+            <p>Autem natus officiis similique omnis magni, minus, harum culpa quam illo eligendi pariatur soluta id delectus rem maiores quasi, neque doloribus iste quas et odit incidunt. Nam recusandae dolorem asperiores eligendi quod nobis similique optio dolor possimus itaque blanditiis, sequi quam deleniti explicabo non odio eveniet! Fugiat, dignissimos. Deleniti, hic!</p>
+        </div>
+        <div id="content6">
+            <h2>title6</h2>
+            <p>A quis harum modi porro sequi impedit dolor! Est excepturi qui mollitia fugiat eos maxime nobis nesciunt, consequuntur harum quis modi, quam ex possimus sunt. Quod dolor molestiae magni tempora!</p>
+            <p>Architecto soluta perferendis iste explicabo sequi sed, cum tempore, error, ex quaerat illo optio. Aspernatur laborum ut neque nesciunt rem asperiores sequi recusandae iure totam architecto cum magnam quibusdam dolor, quia temporibus facere, excepturi vel fuga necessitatibus quos voluptates animi dolore? Expedita laudantium tenetur laborum dignissimos earum placeat obcaecati repudiandae.</p>
+        </div>
+        
+    </main>
+
+
+
+
+   
+</body>
+</html>
