@@ -25,7 +25,13 @@ header nav ul a{
     background-position: center;
     background-size: cover;
     padding: 30px 100px;
-
+    color: snow;
+}
+[id^="content"] h2,p{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+[id^="content"] h2{
+    display: inline-block;
 }
 #content1{
     background-image: url(../images/afternoon-tea-617142_1920.jpg);
